@@ -164,8 +164,8 @@ public class MarketLogisticSystem extends BaseComponentSystem {
 
     @SuppressWarnings("unchecked")
     public int processResourceStore(ResourceStoreEvent event, EntityRef entityRef) {
-        Map<Component, StorageComponentHandler> targetStorageComponents = storageHandlerLibrary.getHandlerComponentMapForEntity(event.getTarget());
-        Map<Component, StorageComponentHandler> originStorageComponents = storageHandlerLibrary.getHandlerComponentMapForEntity(entityRef);
+        Map<Component, StorageComponentHandler> targetStorageComponents = storageHandlerLibrary.getHandlerComponentMapForEntity(entityRef);
+        Map<Component, StorageComponentHandler> originStorageComponents = storageHandlerLibrary.getHandlerComponentMapForEntity(event.getTarget());
 
         if(targetStorageComponents.isEmpty()) {
             logger.warn("Attempted to store resources in a target with no valid storage. Entity: " + event.getTarget().toString());
